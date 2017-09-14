@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+op_code="$1"
+
+if [ "$op_code" == "sync-page" ]; then
+	the_first_page_num="$2"
+	pdf_file="$3"
+
+	the_zero_page_num=$((the_first_page_num-1))
+	pdf_backup="$pdf_file".pdf
+
+	cmd=""
+	cmd="$cmd mv \"$pdf_file\" \"$pdf_backup\" ;"
+	cmd="$cmd qpdf \"$pdf_backup\" --pages \"$pdf_backup\" ${the_first_page_num}-z \"$pdf_backup\" 1-${the_zero_page_num} -- \"$pdf_file\" ;"
+	eval "$cmd"
+	# qpdf tt.pdf --pages tt.pdf 18-z -- ttt.pdf
+elif [ "$op_code" == "decrypt" ]; then
+	pdf_file="$2"
+
+	pdf_backup="$pdf_file".pdf
+	cmd=""
+	cmd="$cmd mv \"$pdf_file\" \"$pdf_backup\" ;"
+	cmd="$cmd qpdf --linearize --decrypt --empty --pages \"$pdf_backup\" 1-z -- \"$pdf_file\" ;"
+	# --empty 可以消除书签，无法消除内容。
+	# --decrypt 无法消除内容。
+	# --linearize 无法消除内容。
+	eval "$cmd"
+fi

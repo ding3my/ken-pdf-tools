@@ -1,0 +1,28 @@
+* Intro
+Operate pdfs.
+* Ops
+#+BEGIN_SRC  
+repo_url="https://github.com/ding3my/ken-pdf-tools.git"
+repo_name="$(basename "${repo_url%.*}")"
+install_dir="/opt/$repo_name"
+cmd=""
+cmd="$cmd mkdir --parents \"$install_dir\" ;"
+cmd="$cmd git clone \"$repo_url\" \"$install_dir\" ;"
+printf "%s\n" "$cmd"
+
+sudo bash -c "eval $cmd"
+
+# Append to your shell profile file
+printf "export PATH=\"\$PATH:$install_dir\"\n"
+#+END_SRC
+* User
+** pdft sync-page $the_first_page_num $pdf_file
+Synchronize the content and page number.
+** pdft decrypt $pdf_file
+Decrypt and empty the pdf.
+* Dev
+https://github.com/coherentgraphics/cpdf-binaries
+
+https://www.coherentpdf.com/usage-examples.html
+
+http://www.coherentpdf.com/cpdfmanual.pdf
