@@ -21,8 +21,8 @@ Synchronize the content and page number.
 ** pdft decrypt $pdf_file
 Decrypt and empty the pdf.
 * Dev
-https://github.com/coherentgraphics/cpdf-binaries
+https://github.com/qpdf/qpdf
 
-https://www.coherentpdf.com/usage-examples.html
+http://qpdf.sourceforge.net/
 
-http://www.coherentpdf.com/cpdfmanual.pdf
+http://qpdf.sourceforge.net/files/qpdf-manual.html
