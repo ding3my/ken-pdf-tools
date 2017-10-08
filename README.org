@@ -2,12 +2,14 @@
 Operate pdfs.
 * His
 Unreleased
+- Added 修改Update标题内容
 
 0.2 - 2017-10-08
 - Update 更新命令pdft decrypt为pdft empty
 
 0.1 - 2017-09-15
 * Ops
+** Install
 #+BEGIN_SRC  
 repo_url="https://github.com/ding3my/ken-pdf-tools.git"
 repo_name="$(basename "${repo_url%.*}")"
@@ -21,6 +23,11 @@ sudo bash -c "eval $cmd"
 
 # Append to your shell profile file
 printf "export PATH=\"\$PATH:$install_dir\"\n"
+#+END_SRC
+** Update
+If project directory is in opt:
+#+BEGIN_SRC  
+sudo bash -c "git -C /opt/ken-pdf-tools/ pull"
 #+END_SRC
 * User
 ** pdft
