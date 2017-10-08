@@ -1,5 +1,12 @@
 * Intro
 Operate pdfs.
+* His
+Unreleased
+
+0.2 - 2017-10-08
+- Update 更新命令pdft decrypt为pdft empty
+
+0.1 - 2017-09-15
 * Ops
 #+BEGIN_SRC  
 repo_url="https://github.com/ding3my/ken-pdf-tools.git"
@@ -16,10 +23,11 @@ sudo bash -c "eval $cmd"
 printf "export PATH=\"\$PATH:$install_dir\"\n"
 #+END_SRC
 * User
-** pdft sync-page $the_first_page_num $pdf_file
+** pdft
+*** pdft sync-page $the_first_page_num $pdf_file
 Synchronize the content and page number.
-** pdft decrypt $pdf_file
-Decrypt and empty the pdf.
+*** pdft empty $pdf_file
+Empty the pdf.
 * Dev
 https://github.com/qpdf/qpdf
 
